@@ -34,6 +34,9 @@ A seguinte configuração foi utilizada, incluindo dependências que, acredito, 
   - Uso de `@Component` vs `@Bean`: Enquanto Components são Beans, a diferença no uso das anotações é quanto ao recurso sendo instanciado.
     - `@Component` é usado para recursos originais da aplicação, os quais o código-fonte é conhecido.
     - `@Bean` é usado para recursos de origem externa a aplicação, cujo código-fonte não é conhecido (como bibliotecas).
+      - Para declarar vários Beans a partir de classes externas que não são, por padrão, adequadas ao Spring,
+      pode-se declarar vários beans em uma classe marcada com `@Configuration` e, tradicionalmente, nomeada Beans,
+      métodos públicos que terão o papel de instanciar (e retornar instância de) essas classes marcados com `@Bean`.
 - Spring Boot: Facilita configuração do Spring, provendo defaults e tornando mais simples o desenvolvimento.
   - Starters: Conjuntos de dependências para casos de uso comuns.
 - Interface `CommandLineRunner` define contrato para implementação de funcionalidade chamada no início da aplicação Spring.
